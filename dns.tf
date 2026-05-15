@@ -11,6 +11,7 @@ resource "aws_route53_record" "www" {
   records = ["10.1.1.4"] # Placeholder IP to match Azure Lab spec
 }
 
+# Requirement: Lab 4 (DNS Resolution) - Maps to Azure Private DNS spec
 resource "aws_route53_zone" "private" {
   name = "private.contoso.com"
   vpc {

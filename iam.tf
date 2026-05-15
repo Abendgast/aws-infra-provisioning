@@ -1,3 +1,4 @@
+# Requirement: Lab 1 (Identity Management) - Maps to Azure Entra ID spec
 resource "aws_iam_user" "user1" {
   name = "az104-user1"
 }
@@ -19,6 +20,7 @@ resource "aws_iam_group_membership" "lab_admins_members" {
   ]
 }
 
+# Requirement: Lab 2 (Role-Based Access Control) - Maps to Azure RBAC spec
 resource "aws_iam_policy" "vm_contributor" {
   name        = "VirtualMachineContributor"
   description = "Allows managing EC2 instances"

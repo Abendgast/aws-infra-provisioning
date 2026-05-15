@@ -1,4 +1,4 @@
-
+# Requirement: Lab 10 (Data Protection) - Maps to Azure Recovery Services spec
 resource "aws_backup_vault" "primary" {
   name = "az104-rsv-region1"
 }

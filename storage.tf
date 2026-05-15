@@ -1,4 +1,5 @@
 
+# Requirement: Lab 3 & Lab 7 (Storage Architecture) - Maps to Azure Blob Storage and Azure Files spec
 resource "random_id" "bucket_suffix" {
   byte_length = 4
 }

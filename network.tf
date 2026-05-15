@@ -1,3 +1,4 @@
+# Requirement: Lab 4 (Virtual Networking) & Lab 5 (Intersite Connectivity) - Maps to Azure VNet and VNet Peering spec
 resource "aws_vpc" "core" {
   cidr_block           = "10.20.0.0/16"
   enable_dns_support   = true
@@ -148,6 +149,7 @@ resource "aws_security_group" "mfg_sg" {
   }
 }
 
+# Requirement: Lab 6 (Traffic Management) - Maps to Azure Application Gateway spec
 resource "aws_lb" "main" {
   name               = "az104-alb"
   internal           = false

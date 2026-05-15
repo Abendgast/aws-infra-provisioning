@@ -1,4 +1,5 @@
 
+# Requirement: Lab 9 (Serverless Containers) - Maps to Azure Container Instances spec
 resource "aws_ecs_cluster" "main" {
   name = "az104-container-cluster"
 }
@@ -78,6 +79,7 @@ resource "aws_iam_instance_profile" "beanstalk_ec2" {
   role = aws_iam_role.beanstalk_ec2.name
 }
 
+# Requirement: Lab 9 (PaaS Web Hosting) - Maps to Azure App Service spec
 resource "aws_elastic_beanstalk_application" "webapp" {
   name        = "az104-webapp"
   description = "Web App for Azure Lab 9a equivalent"

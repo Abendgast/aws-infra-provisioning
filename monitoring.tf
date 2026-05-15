@@ -1,4 +1,4 @@
-
+# Requirement: Lab 11 (Observability & Alerts) - Maps to Azure Monitor spec
 resource "aws_sns_topic" "alerts" {
   name = "az104-alerts-ops-team"
 }

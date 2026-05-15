@@ -12,6 +12,7 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
+# Requirement: Lab 5 (Compute Provisioning) - Maps to Azure Virtual Machines spec
 resource "aws_instance" "core_vm" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t3.micro"
@@ -30,6 +31,7 @@ resource "aws_instance" "mfg_vm" {
   tags = { Name = "ManufacturingVM" }
 }
 
+# Requirement: Lab 8 (Scalable Compute) - Maps to Azure Virtual Machine Scale Sets spec
 resource "aws_launch_template" "vmss" {
   name_prefix   = "az104-vmss-"
   image_id      = data.aws_ami.amazon_linux.id
