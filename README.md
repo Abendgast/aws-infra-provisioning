@@ -82,3 +82,16 @@ To permanently destroy all provisioned infrastructure and avoid incurring furthe
 ```bash
 terraform destroy -auto-approve
 ```
+
+## Requirements Traceability
+
+The infrastructure components provisioned by this repository satisfy the architectural constraints mapped from the original multi-phase infrastructure specification. The exact implementation cross-references are annotated directly within the resource blocks.
+
+* `iam.tf`: Fulfills Requirement 1 (Identity Management) and Requirement 2 (Role-Based Access Control) via IAM Users, Groups, and managed Policies.
+* `storage.tf`: Fulfills Requirement 3 and Requirement 7 (Storage Architecture) via S3 Object Lock, Lifecycle rules, and EFS volumes.
+* `network.tf` & `dns.tf`: Fulfills Requirement 4 (Virtual Networking / DNS) and Requirement 5 (Intersite Connectivity) via isolated VPCs, Route53 Private Hosted Zones, and VPC Peering.
+* `compute.tf`: Fulfills Requirement 5 (Compute Provisioning) and Requirement 8 (Scalable Compute) via EC2 instances, Launch Templates, and target-tracking Auto Scaling Groups.
+* `network.tf`: Fulfills Requirement 6 (Traffic Management) via Application Load Balancer and path-based routing rules.
+* `containers.tf`: Fulfills Requirement 9 (Serverless Containers & PaaS Web Hosting) via ECS Fargate and Elastic Beanstalk.
+* `backup.tf`: Fulfills Requirement 10 (Data Protection) via AWS Backup automated cross-region vault copies.
+* `monitoring.tf`: Fulfills Requirement 11 (Observability & Alerts) via EventBridge target rules filtering compute termination events to SNS notification topics.
